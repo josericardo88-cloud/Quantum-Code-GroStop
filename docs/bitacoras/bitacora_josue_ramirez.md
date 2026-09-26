@@ -18,3 +18,8 @@
 ### Pendientes
 - Apoyar a Yahir cuando restablezca su conexión para verificar su rama.
 - Trabajar en la preparación de los archivos de contenerización (Dockerfile y docker-compose.yml) junto con el equipo.
+
+### Pruebas QA
+- **Módulo probado:** Registro de usuarios.
+- **Resultado:** Fallido (Error 500 Internal Server Error).
+- **Acción tomada:** Se tomó evidencia mediante captura de pantalla y se reportó al área de Backend.
