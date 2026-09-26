@@ -1,21 +1,20 @@
-# Bitácora Individual de Trabajo
+# Bitácora de Trabajo - QA / Git Manager
+**Nombre:** Josué Emmanuel Ramírez Cruz
+**Rol:** QA / Control de Versiones
 
-* **Nombre del Alumno:** [Nombre Completo del Alumno]
-* **Célula:** Célula 5 - Quantum Code
-* **Rol Asignado:** [Líder / UML / Backend / QA / Analista][cite: 4]
-* **Proyecto:** GroStop (E-Commerce Grocery Store)
+---
 
-* **Actividades Realizadas:**
-  * [Escribe aquí qué hiciste hoy en relación a tu rol][cite: 3, 4]
-  * [Ejemplo: Cloné el repositorio y configuré mi entorno virtual de Python][cite: 3]
+## Fecha: 26/09/2026
 
-* **Pruebas y Hallazgos en el Sistema:**
-  * [Escribe qué pantallas, tablas o funciones exploraste y qué descubriste][cite: 3]
+### Actividades realizadas
+- Verificación de la estructura de ramas del repositorio oficial en GitHub.
+- Cambio de entorno a la rama asignada (`rama-josue-qa`).
+- Inspección de la raíz del proyecto para verificar la presencia de Docker.
 
-* **Errores Encontrados y Soluciones Aplicadas:**
-  * **Problema:** [Detalla si tuviste algún error de instalación, base de datos o Git][cite: 3]
-  * **Solución:** [Explica brevemente cómo lo solucionaron tú o el equipo][cite: 3]
+### Hallazgos
+- **Control de Versiones:** La rama `rama-yahir-datos` aún no está presente en el servidor remoto (integrante reporta falta de acceso a internet).
+- **Docker:** No se localizan los archivos `Dockerfile` ni `docker-compose.yml` en la raíz del proyecto.
 
-* **Dudas o Aspectos por Aclarar:**
-  * [Anota lo que aún no entiendes del sistema para revisarlo en equipo o en el checkpoint][cite: 3]
-  * *Nota: Agrega un nuevo bloque "Registro Diario de Actividades" al final de este archivo por cada día que trabajes en el proyecto
+### Pendientes
+- Apoyar a Yahir cuando restablezca su conexión para verificar su rama.
+- Trabajar en la preparación de los archivos de contenerización (Dockerfile y docker-compose.yml) junto con el equipo.
