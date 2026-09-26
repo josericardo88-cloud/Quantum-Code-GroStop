@@ -79,8 +79,11 @@ graph LR
     A --> UC7
     A --> UC8
 ```
-## 5. Diagrama Entidad-Relación (Base de Datos)
+## 🛢️ 5. Diagrama Entidad-Relación (Base de Datos)
+
 Estructura de las tablas principales y sus relaciones dentro de la base de datos MySQL de GroStop:
+
+```mermaid
 erDiagram
     USUARIOS ||--o{ PEDIDOS : realiza
     CATEGORIAS ||--o{ PRODUCTOS : pertenece
@@ -124,6 +127,8 @@ erDiagram
         int cantidad
         float precio_unitario
     }
+```
+---
 ## 6. Stack Tecnológico y Arquitectura
 El proyecto se desarrolla bajo una arquitectura MVC (Modelo-Vista-Controlador) aligerada:
 | Capa | Tecnología Seleccionada | Descripción / Función |
