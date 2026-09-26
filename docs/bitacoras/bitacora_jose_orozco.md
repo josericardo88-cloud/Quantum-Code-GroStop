@@ -1,21 +1,51 @@
+
 # Bitácora Individual de Trabajo
 
-* **Nombre del Alumno:** [Nombre Completo del Alumno]
+* **Nombre del Alumno:** José Ricardo Orozco Sauceda
 * **Célula:** Célula 5 - Quantum Code
-* **Rol Asignado:** [Líder / UML / Backend / QA / Analista][cite: 4]
+* **Rol Asignado:** Product Owner & Líder de Célula
 * **Proyecto:** GroStop (E-Commerce Grocery Store)
 
+---
+
+## Registro Diario de Actividades
+
+### 🗓️ Fecha: 23 / 09 / 2026 | Día 1: Planificación y Setup del Repositorio
+
 * **Actividades Realizadas:**
-  * [Escribe aquí qué hiciste hoy en relación a tu rol][cite: 3, 4]
-  * [Ejemplo: Cloné el repositorio y configuré mi entorno virtual de Python][cite: 3]
+  * Clonación local del repositorio oficial `Quantum-Code-GroStop`.
+  * Análisis del perfil de los 5 integrantes del equipo para la asignación estratégica de roles (Product Owner, UML, Backend/Lógica, Backend/Datos, QA).
+  * Definición del entorno de base de datos más óptimo para el equipo, seleccionando XAMPP/phpMyAdmin por rendimiento y facilidad de uso frente a SQL Server Management Studio.
+  * Diseño inicial de la arquitectura de carpetas dentro de la documentación (`docs/` y `docs/bitacoras/`).
 
 * **Pruebas y Hallazgos en el Sistema:**
-  * [Escribe qué pantallas, tablas o funciones exploraste y qué descubriste][cite: 3]
+  * Se identificó la necesidad de adaptar el flujo de trabajo a la nula experiencia previa del equipo con Git/GitHub.
 
 * **Errores Encontrados y Soluciones Aplicadas:**
-  * **Problema:** [Detalla si tuviste algún error de instalación, base de datos o Git][cite: 3]
-  * **Solución:** [Explica brevemente cómo lo solucionaron tú o el equipo][cite: 3]
+  * **Problema:** Riesgo de conflictos en el código si el equipo trabajaba directo sobre la rama principal.
+  * **Solución:** Diseño de una estrategia estricta de ramas individuales (`rama-nombre-rol`) para aislar el trabajo de cada integrante.
 
 * **Dudas o Aspectos por Aclarar:**
-  * [Anota lo que aún no entiendes del sistema para revisarlo en equipo o en el checkpoint][cite: 3]
-  * *Nota: Agrega un nuevo bloque "Registro Diario de Actividades" al final de este archivo por cada día que trabajes en el proyecto
+  * Definir la estructura exacta que tendrá el documento ejecutable de la descripción del sistema.
+
+---
+
+### 🗓️ Fecha: 26 / 09 / 2026 | Día 2: Onboarding del Equipo, Estructuración y Prompts de Apoyo
+
+* **Actividades Realizadas:**
+  * Creación y subida de mi rama individual de trabajo `rama-jose-po`.
+  * Creación de la plantilla estandarizada `PLANTILLA.md` y de los 5 archivos individuales de bitácora dentro de `docs/bitacoras/`.
+  * Elaboración y distribución del documento PDF *"Guía de Inicio Rápido: Creación de Ramas y Entorno"* para el equipo.
+  * Definición del plan de acción paso a paso para Backend (Kevin y Yahir), Modelado UML (Javier) y QA/Docker (Josué).
+  * Redacción y entrega de 3 "Prompts Maestros de IA" adaptados a cada integrante para guiarlos paso a paso sin depender de tecnicismos complejos.
+  * Coordinación y comunicación por WhatsApp sobre el uso obligatorio de las bitácoras individuales.
+
+* **Pruebas y Hallazgos en el Sistema:**
+  * Se confirmó que todos los integrantes del equipo comprendieron su rol asignado, el uso de su rama individual y el proceso de llenado de bitácoras.
+
+* **Errores Encontrados y Soluciones Aplicadas:**
+  * **Problema:** Posible saturación de información técnica y limitación de recursos de hardware en algunos integrantes (laptops con pocos recursos).
+  * **Solución:** Implementación de analogías didácticas (ej. la caja hermética para explicar Docker, la fotocopia para explicar Ramas) y selección de herramientas ligeras en la nube como Draw.io.
+
+* **Dudas o Aspectos por Aclarar:**
+  * Verificar en las siguientes 24 horas que todos los integrantes hayan realizado el push de sus ramas y su primer commit de bitácora en GitHub.
