@@ -139,4 +139,12 @@ El proyecto se desarrolla bajo una arquitectura MVC (Modelo-Vista-Controlador) a
 | **Control de Versiones**| Git + GitHub | Gestión de código mediante ramas individuales por rol |
 | **Contenerización** | Docker / Docker Compose | Empaquetado en contenedores para ejecución simplificada |
 
-## 7. Estructura de la Célula de Trabajo (Quantum Code)La ejecución del proyecto está a cargo de la Célula 5: Quantum Code, organizada bajo la siguiente distribución de roles:Product Owner & Líder: José Ricardo Orozco Sauceda (rama-jose-po)   Modelador UML Principal: Javier Aram Ortega Cortez (rama-javier-uml)   Desarrollador Backend / Lógica: Kevin Alexander Peña Ontiveros (rama-kevin-backend)   Control de Versiones / QA: Josué Emmanuel Ramirez Cruz (rama-josue-qa)   Backend / Analista de Datos: Yahir Uriel Leija Medina (rama-yahir-datos) 
+##  7. Estructura de la Célula de Trabajo (Quantum Code)
+
+La ejecución del proyecto está a cargo de la **Célula 5: Quantum Code**, organizada bajo la siguiente distribución de roles:
+
+1. **Product Owner & Líder:** José Ricardo Orozco Sauceda (`rama-jose-po`)
+2. **Modelador UML Principal:** Javier Aram Ortega Cortez (`rama-javier-uml`)
+3. **Desarrollador Backend / Lógica:** Kevin Alexander Peña Ontiveros (`rama-kevin-backend`)
+4. **Control de Versiones / QA:** Josué Emmanuel Ramirez Cruz (`rama-josue-qa`)
+5. **Backend / Analista de Datos:** Yahir Uriel Leija Medina (`rama-yahir-datos`)
