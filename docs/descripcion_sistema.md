@@ -78,3 +78,60 @@ graph LR
     A --> UC6
     A --> UC7
     A --> UC8
+```
+## 5. Diagrama Entidad-Relación (Base de Datos)
+Estructura de las tablas principales y sus relaciones dentro de la base de datos MySQL de GroStop:
+erDiagram
+    USUARIOS ||--o{ PEDIDOS : realiza
+    CATEGORIAS ||--o{ PRODUCTOS : pertenece
+    PRODUCTOS ||--o{ DETALLE_PEDIDOS : contiene
+    PEDIDOS ||--o{ DETALLE_PEDIDOS : incluye
+
+    USUARIOS {
+        int id_usuario PK
+        string nombre
+        string email
+        string password
+        string rol
+    }
+
+    CATEGORIAS {
+        int id_categoria PK
+        string nombre_categoria
+    }
+
+    PRODUCTOS {
+        int id_producto PK
+        int id_categoria FK
+        string nombre
+        float precio
+        int stock
+        string imagen
+    }
+
+    PEDIDOS {
+        int id_pedido PK
+        int id_usuario FK
+        date fecha
+        float total
+        string estatus
+    }
+
+    DETALLE_PEDIDOS {
+        int id_detalle PK
+        int id_pedido FK
+        int id_producto FK
+        int cantidad
+        float precio_unitario
+    }
+## 6. Stack Tecnológico y Arquitectura
+El proyecto se desarrolla bajo una arquitectura MVC (Modelo-Vista-Controlador) aligerada:
+| Capa | Tecnología Seleccionada | Descripción / Función |
+| :--- | :--- | :--- |
+| **Backend / Lógica** | Python 3.x + Flask | Framework web ligero para el procesamiento de peticiones y rutas |
+| **Base de Datos** | MySQL / MariaDB (XAMPP) | Motor relacional para el almacenamiento de tablas y relaciones |
+| **Front-End / Interfaz**| HTML5, CSS3, Bootstrap | Estructura, estilos y dinamismo interactivo de la tienda |
+| **Control de Versiones**| Git + GitHub | Gestión de código mediante ramas individuales por rol |
+| **Contenerización** | Docker / Docker Compose | Empaquetado en contenedores para ejecución simplificada |
+
+## 7. Estructura de la Célula de Trabajo (Quantum Code)La ejecución del proyecto está a cargo de la Célula 5: Quantum Code, organizada bajo la siguiente distribución de roles:Product Owner & Líder: José Ricardo Orozco Sauceda (rama-jose-po)   Modelador UML Principal: Javier Aram Ortega Cortez (rama-javier-uml)   Desarrollador Backend / Lógica: Kevin Alexander Peña Ontiveros (rama-kevin-backend)   Control de Versiones / QA: Josué Emmanuel Ramirez Cruz (rama-josue-qa)   Backend / Analista de Datos: Yahir Uriel Leija Medina (rama-yahir-datos) 
