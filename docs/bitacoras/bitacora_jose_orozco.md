@@ -49,3 +49,23 @@
 
 * **Dudas o Aspectos por Aclarar:**
   * Verificar en las siguientes 24 horas que todos los integrantes hayan realizado el push de sus ramas y su primer commit de bitácora en GitHub.
+
+ ---
+
+### 🗓️ Fecha: 26 / 09 / 2026 | Día 3: Redacción de la Descripción del Sistema e Integración de Mermaid
+
+* **Actividades Realizadas:**
+  * Redacción completa del documento ejecutable `docs/descripcion_sistema.md` definiendo objetivos, actores (Cliente y Admin), módulos y stack tecnológico.
+  * Creación de un **Diagrama de Casos de Uso** y un **Diagrama Entidad-Relación (ERD)** utilizando código **Mermaid.js** directamente en Markdown.
+  * Estructuración de la tabla del stack tecnológico y del listado oficial de roles de la Célula 5.
+
+* **Pruebas y Hallazgos en el Sistema:**
+  * Se verificó que GitHub renderiza de forma visual e interactiva los bloques de código Mermaid en el navegador sin necesidad de subir imágenes estáticas.
+
+* **Errores Encontrados y Soluciones Aplicadas:**
+  * **Problema 1:** Desformateo del diagrama Entidad-Relación debido a la falta de etiquetas de cierre (```) y espacio de línea en el bloque Mermaid.
+  * **Problema 2:** Agrupación involuntaria de la lista numerada en un solo párrafo por omisión de renglones vacíos.
+  * **Solución:** Se ajustó la sintaxis Markdown delimitando correctamente los bloques de código y agregando saltos de línea para un renderizado visual perfecto.
+
+* **Dudas o Aspectos por Aclarar:**
+  * Monitorear que los integrantes sigan avanzando en el levantamiento local del sistema.
