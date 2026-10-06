@@ -66,19 +66,7 @@
 ---
 
 ## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
-
-
- | Envío de formulario de registro de clientes.
-
- | **Error 500 (Internal Server Error)** en el navegador por fallo de autenticación de MySQL (`Access denied for user 'root'`). | Se identificó un descalce entre la contraseña guardada en el volumen persistente de Docker y `database.yaml`. **Estado:** ❌ Fallido |
-| **Sesión 2** | Infraestructura / Docker | Limpieza de volúmenes antiguos y reinicio de contenedores. | Los contenedores se recrearon con la contraseña `root` correctamente enlazada. | Se ejecutó `docker compose down -v` seguido de `docker compose up --build -d`. **Estado:** ✔️ Resuelto |
-| **Sesión 3** | Base de Datos (MySQL) | Importación del script de volcado de datos `Dump.sql`. | **ERROR 2002 (HY000)** en PowerShell al no estar MySQL completamente listo durante la inicialización. | Se esperaron 15 segundos para la inicialización del socket y se reejecutó: `Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db`. **Estado:** ✔️ Resuelto |
-| **Sesión 4** | Registro (`/customerRegister`)
-
- | Registro de un nuevo cliente de prueba en la plataforma.
-
- | Muestra el banner *"You have registered successfully!"* en la interfaz. | Se verificó la persistencia del usuario registrado directamente en `grostop_db`. **Estado:** ✔️ Exitoso |
-| **Sesión 5** | Git / Control de Cambios | Intento de push tras resolver divergencias de ramas. | Git notificó un estado inconcluso (`All conflicts fixed but you are still merging`). | Se agregaron los archivos de configuración (`run.py`), se cerró el commit con `git commit -m "..."` y se subió con `git push origin rama-josue-qa`. **Estado:** ✔️ Resuelto |
+Sesión 1: Registro (/customerRegister)   Acción realizada: Envío de formulario de registro de clientes.   Resultado obtenido: Error 500 (Internal Server Error) en el navegador por fallo de autenticación de MySQL (Access denied for user 'root').Solución aplicada: Se identificó un descalce entre la contraseña guardada en el volumen persistente de Docker y database.yaml.Estado: ❌ FallidoSesión 2: Infraestructura / DockerAcción realizada: Limpieza de volúmenes antiguos y reinicio de contenedores.Resultado obtenido: Los contenedores se recrearon con la contraseña root correctamente enlazada.Solución aplicada: Se ejecutó docker compose down -v seguido de docker compose up --build -d.Estado: ✔️ ResueltoSesión 3: Base de Datos (MySQL)Acción realizada: Importación del script de volcado de datos Dump.sql.Resultado obtenido: ERROR 2002 (HY000) en PowerShell al no estar MySQL completamente listo durante la inicialización.   Solución aplicada: Se esperaron 15 segundos para la inicialización del socket y se reejecutó: Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db.Estado: ✔️ ResueltoSesión 4: Registro (/customerRegister)   Acción realizada: Registro de un nuevo cliente de prueba en la plataforma.   Resultado obtenido: Muestra el banner "You have registered successfully!" en la interfaz.Solución aplicada: Se verificó la persistencia del usuario registrado directamente en la base de datos grostop_db.Estado: ✔️ ExitosoSesión 5: Git / Control de CambiosAcción realizada: Intento de push tras resolver divergencias de ramas.Resultado obtenido: Git notificó un estado inconcluso (All conflicts fixed but you are still merging).Solución aplicada: Se agregaron los archivos de configuración (run.py), se cerró el commit con git commit -m "..." y se subió con git push origin rama-josue-qa.Estado: ✔️ Resuelto 
 
 ---
 
