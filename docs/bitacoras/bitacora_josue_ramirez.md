@@ -195,7 +195,7 @@ Para conectar e importar correctamente la base de datos sin errores de socket ni
 ### 1. Ubicarse en el directorio del proyecto
 
 ```powershell
-cd "C:\Users\ec704\OneDrive\Escritorio\Trabajos\Trabajos Garza\Quantum-Code-GroStop"
+cd "C:\Users\Quantum-Code-GroStop"
 ```
 
 ### 2. Limpiar volúmenes y levantar los contenedores de Docker
