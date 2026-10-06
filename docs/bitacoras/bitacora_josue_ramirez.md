@@ -64,8 +64,6 @@
 
 
 ---
-
-## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
 ## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
 
 <details>
