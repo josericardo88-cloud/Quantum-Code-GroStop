@@ -148,13 +148,6 @@ Actualmente el sistema utiliza consultas SQL puras con `Flask-MySQLdb` y cargas 
 
 
 
----
-Aquí tienes el bloque completo con los **cambios exactos de código (archivo y línea)** y los **comandos de PowerShell** necesarios. Este formato también utiliza el estilo desplegable para que se integre perfectamente con tu bitácora en GitHub.
-
-Puedes copiar este bloque y pegarlo al final de tu archivo `BITACORA_QA_JOSUE.md`:
-
----
-
 ```markdown
 ## 🛠️ Cambios de Código Aplicados y Configuración de PowerShell
 
