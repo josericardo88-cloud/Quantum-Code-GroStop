@@ -27,7 +27,7 @@ Durante esta sesión de trabajo se analizó la documentación y la estructura de
 
 ### 1. Diagrama de Casos de Uso (Cliente y Administrador)
 
-![Diagrama de Casos de Uso](Diagramas/Diagrama de Casos de Uso (Cliente y Administrador).drawio.png)
+![Diagrama de Casos de Uso](Diagramas/Diagrama_de_Casos_de_Uso-Cliente-y-Administrador.drawio.png)
 
 ### 2. Diagrama Entidad-Relación (Base de Datos MySQL)
 
