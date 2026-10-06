@@ -66,8 +66,63 @@
 ---
 
 ## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
-Sesión 1: Registro (/customerRegister)   Acción realizada: Envío de formulario de registro de clientes.   Resultado obtenido: Error 500 (Internal Server Error) en el navegador por fallo de autenticación de MySQL (Access denied for user 'root').Solución aplicada: Se identificó un descalce entre la contraseña guardada en el volumen persistente de Docker y database.yaml.Estado: ❌ FallidoSesión 2: Infraestructura / DockerAcción realizada: Limpieza de volúmenes antiguos y reinicio de contenedores.Resultado obtenido: Los contenedores se recrearon con la contraseña root correctamente enlazada.Solución aplicada: Se ejecutó docker compose down -v seguido de docker compose up --build -d.Estado: ✔️ ResueltoSesión 3: Base de Datos (MySQL)Acción realizada: Importación del script de volcado de datos Dump.sql.Resultado obtenido: ERROR 2002 (HY000) en PowerShell al no estar MySQL completamente listo durante la inicialización.   Solución aplicada: Se esperaron 15 segundos para la inicialización del socket y se reejecutó: Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db.Estado: ✔️ ResueltoSesión 4: Registro (/customerRegister)   Acción realizada: Registro de un nuevo cliente de prueba en la plataforma.   Resultado obtenido: Muestra el banner "You have registered successfully!" en la interfaz.Solución aplicada: Se verificó la persistencia del usuario registrado directamente en la base de datos grostop_db.Estado: ✔️ ExitosoSesión 5: Git / Control de CambiosAcción realizada: Intento de push tras resolver divergencias de ramas.Resultado obtenido: Git notificó un estado inconcluso (All conflicts fixed but you are still merging).Solución aplicada: Se agregaron los archivos de configuración (run.py), se cerró el commit con git commit -m "..." y se subió con git push origin rama-josue-qa.Estado: ✔️ Resuelto 
+## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
 
+<details>
+<summary><b>🔴 Sesión 1: Registro (/customerRegister)</b> — <i>Estado: ❌ Fallido</i></summary>
+<br>
+
+* **Acción realizada:** Envío de formulario de registro de clientes.
+* **Resultado obtenido:** **Error 500 (Internal Server Error)** en el navegador por fallo de autenticación de MySQL (`Access denied for user 'root'`).
+* **Solución aplicada:** Se identificó un descalce entre la contraseña guardada en el volumen persistente de Docker y `database.yaml`.
+
+---
+</details>
+
+<details>
+<summary><b>🟢 Sesión 2: Infraestructura / Docker</b> — <i>Estado: ✔️ Resuelto</i></summary>
+<br>
+
+* **Acción realizada:** Limpieza de volúmenes antiguos y reinicio de contenedores.
+* **Resultado obtenido:** Los contenedores se recrearon con la contraseña `root` correctamente enlazada.
+* **Solución aplicada:** Se ejecutó `docker compose down -v` seguido de `docker compose up --build -d`.
+
+---
+</details>
+
+<details>
+<summary><b>🟢 Sesión 3: Base de Datos (MySQL)</b> — <i>Estado: ✔️ Resuelto</i></summary>
+<br>
+
+* **Acción realizada:** Importación del script de volcado de datos `Dump.sql`.
+* **Resultado obtenido:** **ERROR 2002 (HY000)** en PowerShell al no estar MySQL completamente listo durante la inicialización.
+* **Solución aplicada:** Se esperaron 15 segundos para la inicialización del socket y se reejecutó:  
+  `Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db`
+
+---
+</details>
+
+<details>
+<summary><b>🟢 Sesión 4: Registro (/customerRegister)</b> — <i>Estado: ✔️ Exitoso</i></summary>
+<br>
+
+* **Acción realizada:** Registro de un nuevo cliente de prueba en la plataforma.
+* **Resultado obtenido:** Muestra el banner *"You have registered successfully!"* en la interfaz.
+* **Solución aplicada:** Se verificó la persistencia del usuario registrado directamente en la base de datos `grostop_db`.
+
+---
+</details>
+
+<details>
+<summary><b>🟢 Sesión 5: Git / Control de Cambios</b> — <i>Estado: ✔️ Resuelto</i></summary>
+<br>
+
+* **Acción realizada:** Intento de push tras resolver divergencias de ramas.
+* **Resultado obtenido:** Git notificó un estado inconcluso (`All conflicts fixed but you are still merging`).
+* **Solución aplicada:** Se agregaron los archivos de configuración (`run.py`), se cerró el commit con `git commit -m "..."` y se subió con `git push origin rama-josue-qa`.
+
+---
+</details>
 ---
 
 ## 📌 Observaciones Técnicas y Notas para el Equipo
