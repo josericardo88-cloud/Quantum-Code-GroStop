@@ -10,7 +10,7 @@
 
 ## Registro Diario de Actividades
 
-### 🗓️ Fecha: 23 / 09 / 2026 | Día 1: Planificación y Setup del Repositorio
+### Planificación y Setup del Repositorio
 
 * **Actividades Realizadas:**
   * Clonación local del repositorio oficial `Quantum-Code-GroStop`.
@@ -30,7 +30,7 @@
 
 ---
 
-### 🗓️ Fecha: 26 / 09 / 2026 | Día 2: Onboarding del Equipo, Estructuración y Prompts de Apoyo
+### Onboarding del Equipo, Estructuración y Prompts de Apoyo
 
 * **Actividades Realizadas:**
   * Creación y subida de mi rama individual de trabajo `rama-jose-po`.
@@ -52,7 +52,7 @@
 
  ---
 
-### 🗓️ Fecha: 26 / 09 / 2026 | Día 3: Redacción de la Descripción del Sistema e Integración de Mermaid
+### Redacción de la Descripción del Sistema e Integración de Mermaid
 
 * **Actividades Realizadas:**
   * Redacción completa del documento ejecutable `docs/descripcion_sistema.md` definiendo objetivos, actores (Cliente y Admin), módulos y stack tecnológico.
