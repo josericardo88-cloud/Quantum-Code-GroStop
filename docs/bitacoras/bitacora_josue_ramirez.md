@@ -1,3 +1,4 @@
+```markdown
 # Bitácora de Trabajo - QA / Git Manager
 
 **Nombre:** Josué Emmanuel Ramírez Cruz  
@@ -122,3 +123,90 @@ Para que cualquier integrante del equipo pueda levantar el proyecto en su máqui
 
   # 3. Esperar 15 segundos a que la BD responda y luego importar Dump.sql
   Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db
+
+```
+
+* **Manejo de `database.yaml`:** No sobreescribir las credenciales locales de prueba si difieren de las configuraciones compartidas.
+* **Deuda Técnica Detectada:** Actualmente el sistema utiliza consultas SQL puras con `Flask-MySQLdb` y cargas manuales de `Dump.sql`. Como propuesta de mejora para el entregable final del proyecto, se sugiere refactorizar la persistencia hacia un ORM (`Flask-SQLAlchemy`) con migraciones automáticas (`Flask-Migrate`).
+
+---
+
+## 🛠️ Cambios de Código Aplicados y Configuración de PowerShell
+
+* **Archivo:** `market/__init__.py`
+* **Línea modificada / agregada:** Configuración del cliente MySQL.
+* **Cambio realizado:** Se aseguraron los parámetros de conexión para el contenedor de la base de datos reemplazando el valor por defecto de `localhost` por el host del servicio de Docker Compose (`db`):
+```python
+app.config['MYSQL_HOST'] = 'db'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_DB'] = 'grostop_db'
+
+```
+
+
+
+
+* **Archivo:** `run.py`
+* **Líneas 1-6:** Ajuste en el punto de entrada de la aplicación Flask.
+* **Cambio realizado:** Se verificó que el servidor de desarrollo modifique el host a `0.0.0.0` para permitir la comunicación bidireccional desde los contenedores de Docker hacia el navegador local:
+```python
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
+```
+
+
+
+
+* **Archivo:** `database.yaml`
+* **Líneas 1-4:** Sincronización de credenciales locales.
+* **Cambio realizado:** Ajuste de variables para mantener paridad con `docker-compose.yml`:
+```yaml
+mysql_host: 'db'
+mysql_user: 'root'
+mysql_password: 'root'
+mysql_db: 'grostop_db'
+
+```
+
+
+
+
+
+---
+
+Para conectar e importar correctamente la base de datos sin errores de socket ni conflictos de volumen, se deben ejecutar los siguientes comandos en orden desde PowerShell dentro de la raíz del proyecto (`Quantum-Code-GroStop`):
+
+1. **Ubicarse en el directorio del proyecto:**
+```powershell
+cd "C:\Users\ec704\OneDrive\Escritorio\Trabajos\Trabajos Garza\Quantum-Code-GroStop"
+
+```
+
+
+2. **Limpiar volúmenes corruptos y levantar los contenedores de Docker:**
+```powershell
+docker compose down -v
+docker compose up --build -d
+
+```
+
+
+3. **Importar el esquema y volcados de datos (`Dump.sql`) a MySQL:**
+*(Es importante esperar 10-15 segundos tras el `up` para que el servicio de MySQL acepte conexiones).*
+```powershell
+Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db
+
+```
+
+
+4. **Verificar que la base de datos recibió las tablas correctamente (Opcional):**
+```powershell
+docker exec -it grostop_db mysql -u root -proot -e "SHOW TABLES FROM grostop_db;"
+
+```
+
+
+
+---
