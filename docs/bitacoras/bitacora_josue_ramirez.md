@@ -151,20 +151,87 @@ Actualmente el sistema utiliza consultas SQL puras con `Flask-MySQLdb` y cargas 
 
 
 ---
+Aquí tienes el bloque completo con los **cambios exactos de código (archivo y línea)** y los **comandos de PowerShell** necesarios. Este formato también utiliza el estilo desplegable para que se integre perfectamente con tu bitácora en GitHub.
 
-### 🚀 Pasos para agregar esta bitácora a tu repositorio desde PowerShell:
+Puedes copiar este bloque y pegarlo al final de tu archivo `BITACORA_QA_JOSUE.md`:
 
-1. Crea el archivo en la raíz del proyecto:
+---
+
+```markdown
+## 🛠️ Cambios de Código Aplicados y Configuración de PowerShell
+
+<details>
+<summary><b>📂 1. Modificaciones en el Código Fuente (Archivos y Líneas)</b></summary>
+<br>
+
+* **Archivo:** `market/__init__.py`
+  * **Línea modificada / agregada:** Configuración del cliente MySQL.
+  * **Cambio realizado:** Se aseguraron los parámetros de conexión para el contenedor de la base de datos reemplazando el valor por defecto de `localhost` por el host del servicio de Docker Compose (`db`):
+    ```python
+    app.config['MYSQL_HOST'] = 'db'
+    app.config['MYSQL_USER'] = 'root'
+    app.config['MYSQL_PASSWORD'] = 'root'
+    app.config['MYSQL_DB'] = 'grostop_db'
+    ```
+
+* **Archivo:** `run.py`
+  * **Líneas 1-6:** Ajuste en el punto de entrada de la aplicación Flask.
+  * **Cambio realizado:** Se verificó que el servidor dev modifique el host a `0.0.0.0` para permitir la comunicación bidireccional desde los contenedores de Docker hacia el navegador local:
+    ```python
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=5000, debug=True)
+    ```
+
+* **Archivo:** `database.yaml`
+  * **Líneas 1-4:** Sincronización de credenciales locales.
+  * **Cambio realizado:** Ajuste de variables para mantener paridad con `docker-compose.yml`:
+    ```yaml
+    mysql_host: 'db'
+    mysql_user: 'root'
+    mysql_password: 'root'
+    mysql_db: 'grostop_db'
+    ```
+
+---
+</details>
+
+<details>
+<summary><b>💻 2. Comandos de PowerShell para la Conexión y Carga de la BD</b></summary>
+<br>
+
+Para conectar e importar correctamente la base de datos sin errores de socket ni conflictos de volumen, se deben ejecutar los siguientes comandos en orden desde PowerShell dentro de la raíz del proyecto (`Quantum-Code-GroStop`):
+
+1. **Ubicarse en el directorio del proyecto:**
+   ```powershell
+   cd "C:\Users\Quantum-Code-GroStop"
+
+```
+
+2. **Limpiar volúmenes corruptos y levantar los contenedores de Docker:**
 ```powershell
-New-Item -Path . -Name "BITACORA_QA_JOSUE.md" -ItemType "File"
+docker compose down -v
+docker compose up --build -d
 
 ```
 
 
-2. Abre el archivo en VS Code, pega el texto de arriba y guárdalo (`Ctrl + S`).
-3. Sube el nuevo archivo a tu rama en GitHub:
+3. **Importar el esquema y volcados de datos (`Dump.sql`) a MySQL:**
+*(Es importante esperar 10-15 segundos tras el `up` para que el servicio de MySQL acepte conexiones).*
 ```powershell
-git add BITACORA_QA_JOSUE.md
+Get-Content Dump.sql | docker exec -i grostop_db mysql -u root -proot grostop_db
+
+```
+
+
+4. **Verificar que la base de datos recibió las tablas correctamente (Opcional):**
+```powershell
+docker exec -it grostop_db mysql -u root -proot -e "SHOW TABLES FROM grostop_db;"
+
+```
+
+
+
+---
 git commit -m "docs: agrega bitacora de pruebas de QA y guia de resolucion de errores"
 git push origin rama-josue-qa
 
