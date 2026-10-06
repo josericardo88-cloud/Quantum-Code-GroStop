@@ -67,9 +67,6 @@
 
 ## 📝 Registro Detallado de Sesiones (Bitácora de Pruebas)
 
-| Sesión / Fecha | Módulo / Componente | Acción / Prueba Realizada | Resultado Obtenido | Solución Aplicada / Estado |
-| --- | --- | --- | --- | --- |
-| **Sesión 1** | Registro (`/customerRegister`)
 
  | Envío de formulario de registro de clientes.
 
