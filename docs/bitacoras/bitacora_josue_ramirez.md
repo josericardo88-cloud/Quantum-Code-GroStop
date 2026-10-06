@@ -221,9 +221,4 @@ docker exec -it grostop_db mysql -u root -proot -e "SHOW TABLES FROM grostop_db;
 ```
 
 
-
----
-git commit -m "docs: agrega bitacora de pruebas de QA y guia de resolucion de errores"
-git push origin rama-josue-qa
-
 ```
