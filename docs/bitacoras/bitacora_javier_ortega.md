@@ -6,7 +6,7 @@
 
 **Célula:** Célula 5 - Quantum Code
 
-**Rol Asignado:** Backend
+**Rol Asignado:** UML Designer
 
 **Proyecto:** GroStop (E-Commerce Grocery Store)
 
